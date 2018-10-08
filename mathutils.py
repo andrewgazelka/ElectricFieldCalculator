@@ -1,6 +1,6 @@
 def sqrt(number: float, iterations=100):
     """
-    A binary search method to finding the square root of a number
+    A binary search method for finding the square root of a number
 
     :param number: The number to take the square root of
     :param iterations: The number of max iterations for the square root calculation
