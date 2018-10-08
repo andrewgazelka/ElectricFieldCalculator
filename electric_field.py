@@ -5,6 +5,8 @@ import numpy as np
 
 import mathutils
 
+k_e = 8.99E9
+
 
 def calculate_field(q_total: float, rod_length: float, dy: float, data_points: int = 1000):
     dq = q_total / data_points
@@ -15,7 +17,7 @@ def calculate_field(q_total: float, rod_length: float, dy: float, data_points: i
 
     for dx in np.linspace(-max_displacement, max_displacement, data_points):
         dist2 = dx * dx + dy * dy
-        dE_mag = dq / dist2
+        dE_mag = k_e * dq / dist2
 
         dE = get_components(dx, dy, dE_mag)
 
