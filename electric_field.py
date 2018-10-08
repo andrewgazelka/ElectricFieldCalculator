@@ -3,6 +3,8 @@ import math
 import matplotlib.pyplot as plt
 import numpy as np
 
+import mathutils
+
 
 def calculate_field(q_total: float, rod_length: float, dy: float, data_points: int = 1000):
     dq = q_total / data_points
@@ -50,8 +52,8 @@ def get_components(dx, dy, mag):
         F_x = mag
         F_y = 0
     else:
-        F_x = mag / math.sqrt(1 + (dy / dx) ** 2)
-        F_y = math.sqrt(mag ** 2 - F_x ** 2)
+        F_x = mag / mathutils.sqrt(1 + (dy / dx) ** 2)
+        F_y = mathutils.sqrt(mag ** 2 - F_x ** 2)
 
     return math.copysign(F_x, dx), math.copysign(F_y, dy)
 
