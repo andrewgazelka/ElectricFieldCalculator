@@ -1,6 +1,6 @@
 import math
 
-import matplotlib.pyplot as plot
+import matplotlib.pyplot as plt
 import numpy as np
 
 
@@ -57,12 +57,16 @@ def get_components(dx, dy, mag):
 
 
 if __name__ == '__main__':
-
+    dy = float(input("dy (m): "))
+    q_total = float(input("q_total (Amps): "))
+    rod_length = float(input("rod_length (m): "))
     data = []
     for i in range(1, 100):
-        result = calculate_field(q_total=100, rod_length=10, dy=0.04, data_points=i)
-        to_append = (i, result[1])
+        result = calculate_field(q_total, rod_length, dy, data_points=i)
+        to_append = result[1]
         data.append(to_append)
-        print(to_append)
-    plot.plot(data)
-    plot.show()
+    plt.grid()
+    plt.ylabel("Electrical field (V/m)")
+    plt.xlabel("Number of charge calculation iterations")
+    plt.plot(data)
+    plt.show()
