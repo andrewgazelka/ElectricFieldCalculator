@@ -1,7 +1,7 @@
 import math
 
-import numpy as np
 import matplotlib.pyplot as plot
+import numpy as np
 
 
 def calculate_field(q_total: float, rod_length: float, dy: float, data_points: int = 1000):
@@ -59,7 +59,7 @@ def get_components(dx, dy, mag):
 if __name__ == '__main__':
 
     data = []
-    for i in range(1,100):
+    for i in range(1, 100):
         result = calculate_field(q_total=100, rod_length=10, dy=0.04, data_points=i)
         to_append = (i, result[1])
         data.append(to_append)
